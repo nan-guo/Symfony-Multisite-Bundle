@@ -8,7 +8,7 @@ This bundle allows you to manage multisite in symfony application.
 
 ```
 
-composer require prodigious/multisite-bundle
+composer require prodigious/symfony-multisite-bundle
 
 ```
 
