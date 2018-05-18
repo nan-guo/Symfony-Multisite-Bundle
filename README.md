@@ -49,7 +49,7 @@ composer install
 
 There is a list of commands to manage your sites.
 
-### Get the list of sites
+#### Get the list of sites
 
 ```
 

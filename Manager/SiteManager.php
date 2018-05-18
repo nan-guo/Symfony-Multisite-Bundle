@@ -165,7 +165,7 @@ class SiteManager
                 $incenteevParameters = $extra['incenteev-parameters'];
             }
             foreach($incenteevParameters as $key => $obj) {
-                if($config == $obj->file) {
+                if(isset($obj->file) && $config == $obj->file) {
                     unset($incenteevParameters[$key]);
                 }
             }
