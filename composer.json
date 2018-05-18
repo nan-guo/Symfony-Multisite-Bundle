@@ -19,10 +19,10 @@
     "require": {
         "php": ">=7.1.0",
         "symfony/symfony": "^3.0",
-        "doctrine/doctrine-bundle": "~1.6",
+        "doctrine/doctrine-bundle": "~1.6"
     },
     "autoload": {
-        "psr-4": { "Prodigious\\MultisiteBundle\\MultisiteBundle\\": "" }
+        "psr-4": { "Prodigious\\MultisiteBundle\\": "" }
     },
     "extra": {
         "branch-alias": {
