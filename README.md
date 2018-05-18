@@ -1,4 +1,4 @@
-Aimeos Symfony bundle
+Symfony Multisite bundle
 ======================
 
 The repository contains the Symfony multisite bundle for Symfony 3. 
@@ -39,5 +39,9 @@ Then add these lines to your composer.json of your Symfony project:
 
 Afterwards, initialize the bundle using
 
-`composer install`
+```
+
+composer install
+
+```
 
