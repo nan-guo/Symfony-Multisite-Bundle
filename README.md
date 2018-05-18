@@ -1,4 +1,4 @@
-Symfony Multisite bundle
+Symfony Multisite Bundle
 ======================
 
 The repository contains the Symfony multisite bundle for Symfony 3. 
