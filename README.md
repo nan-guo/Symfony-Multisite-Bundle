@@ -161,3 +161,8 @@ php bin/console site:delete --name=demo_1
 
 ```
 ![screenshot](https://github.com/nan-guo/Multisite-Bundle/blob/master/Resources/public/imgs/screenshot-5.png)
+
+## Additional info
+Author: [Nan GUO](https://github.com/nan-guo/)
+ 
+Company : [Prodigious](http://www.prodigious.com/)
