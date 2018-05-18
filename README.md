@@ -81,17 +81,21 @@ require __DIR__.'/../sites/autoload/sites.php';
 
 And Relace
 
-`php
+```
+    // app.php
     $kernel = new AppKernel('prod', false);
+    // app_dev.php
     $kernel = new AppKernel('dev', true);
-`
+```
 
 To
 
-`php
+```
+    // app.php
     $kernel = new MultisiteKernel('prod', false);
+    // app_dev.php
     $kernel = new MultisiteKernel('dev', true);
-`
+```
 
 Like this :
 
