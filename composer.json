@@ -1,5 +1,5 @@
 {
-    "name": "prodigious/multisite-bundle",
+    "name": "prodigious/symfony-multisite-bundle",
     "type": "symfony-bundle",
     "description": "This bundle allows you to manage multisite in symfony application.",
     "keywords": ["symfony multisite", "symfony multi-sites","multisite bundle", "multi-sites bundle"],
