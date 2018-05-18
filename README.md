@@ -71,13 +71,13 @@ And you need to modify some files :
 ##### Modifiy your app.php and app_dev.php in the folder web:
 
 Replace
-`
+```
 require __DIR__.'/../vendor/autoload.php
-`
+```
 To
-`
+```
 require __DIR__.'/../sites/autoload/sites.php';
-`
+```
 
 And Relace
 
