@@ -52,33 +52,38 @@ There is a list of commands to manage your sites.
 ### Get the list of sites
 
 ```
+
 php bin/console site:list
 
 ```
 
-### Create a new site
+#### Create a new site
 
 ```
+
 php bin/console site:create
 
 ```
 
-### Disable a site
+#### Disable a site
 
 ```
+
 php bin/console site:disable --name=demo_1
 
 ```
-### Enable a site
+#### Enable a site
 
 ```
+
 php bin/console site:enable --name=demo_1
 
 ```
 
-### Delete a site
+#### Delete a site
 
 ```
+
 php bin/console site:delete --name=demo_1
 
 ```
