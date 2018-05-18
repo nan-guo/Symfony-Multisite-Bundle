@@ -1,0 +1,25 @@
+services:
+    _defaults:
+        # enable autowiring for these services
+        autowire: true
+        # make services private by default
+        public: false
+    
+    multisite.console_event_listener:
+        class: Prodigious\MultisiteBundle\EventListener\SiteEventListener
+        tags:
+            - { name: kernel.event_listener, event: console.command, method: onConsoleCommand }
+
+    multisite.response_event_listener:
+        class: Prodigious\MultisiteBundle\EventListener\RequestListener
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: onKernelResquest }
+
+    multisite.twig_extension:
+        class: Prodigious\MultisiteBundle\Twig\Extension\AssetsExtension
+        tags:
+            - { name: twig.extension }
+
+    multisite.manager:
+        class: Prodigious\MultisiteBundle\Manager\SiteManager
+        public: true

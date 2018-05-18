@@ -1,0 +1,32 @@
+{
+    "name": "prodigious/multilsite-bundle",
+    "type": "symfony-bundle",
+    "description": "This bundle allows you to manage multisite in symfony application.",
+    "keywords": ["symfony multisite", "symfony multi-sites","multisite bundle", "multi-sites bundle"],
+    "homepage": "https://github.com/nan-guo/Multisite-Bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nan GUO",
+            "email": "guonanhq@gmail.com",
+            "homepage": "https://github.com/nan-guo/"
+        },
+        {
+            "name": "Prodigious",
+            "homepage": "http://www.prodigious.com/"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "symfony/symfony": "^3.0",
+        "doctrine/doctrine-bundle": "~1.6",
+    },
+    "autoload": {
+        "psr-4": { "Prodigious\\MultisiteBundle\\MultisiteBundle\\": "" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
