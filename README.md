@@ -2,7 +2,33 @@ Symfony Multisite Bundle
 ======================
 
 The repository contains the Symfony multisite bundle for Symfony 3. 
-This bundle allows you to manage multisite in symfony application, each site can have its own database connection or use the same database.
+This bundle allows you to manage multisite in symfony application.
+
+
+- Each site can have its own database connection or use the same database.
+- Each site can have diffirent locales
+- Each site can have its own app folder and public folder
+- Each site can have its own robots.txt
+
+## Structure public folder
+
+Each sites first looks for assets in its own folder
+
+For example (demo_2): 
+
+The site demo_2 will first look for the image chat.png in
+
+/web/public/demo_2/imgs/chat.png
+
+if this image does not exist, the file /web/imgs/chat.png will be used
+
+## Structure robots.txt
+
+Each site can have its own robots.txt in the folder :
+
+/robots/hostname.txt
+
+if hostname.txt does not exist, the file /web/robots.txt will be used.
 
 ## Installation
 
@@ -117,6 +143,7 @@ if (PHP_VERSION_ID < 70000) {
 
 There is a list of commands to manage your sites.
 
+
 #### Create a new site
 
 ```
@@ -161,6 +188,28 @@ php bin/console site:delete --name=demo_1
 
 ```
 ![screenshot](https://github.com/nan-guo/Multisite-Bundle/blob/master/Resources/public/imgs/screenshot-5.png)
+
+## Attributes
+
+```
+
+$currentSite = $request->attributes->get('site'); // 'app' by default
+
+```
+
+```
+
+$currentInstance = $request->attributes->get('instance');
+
+```
+
+```
+
+$currentLocal = $request->getLocale();
+
+```
+
+
 
 ## Additional info
 Author: [Nan GUO](https://github.com/nan-guo/)
