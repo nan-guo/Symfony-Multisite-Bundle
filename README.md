@@ -49,20 +49,20 @@ composer install
 
 There is a list of commands to manage your sites.
 
-#### Get the list of sites
-
-```
-
-php bin/console site:list
-
-```
-![screenshot](https://github.com/nan-guo/Multisite-Bundle/blob/master/Resources/public/imgs/screenshot-1.png)
-
 #### Create a new site
 
 ```
 
 php bin/console site:create
+
+```
+![screenshot](https://github.com/nan-guo/Multisite-Bundle/blob/master/Resources/public/imgs/screenshot-1.png)
+
+#### Get the list of sites
+
+```
+
+php bin/console site:list
 
 ```
 ![screenshot](https://github.com/nan-guo/Multisite-Bundle/blob/master/Resources/public/imgs/screenshot-2.png)
