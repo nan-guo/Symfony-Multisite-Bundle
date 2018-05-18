@@ -10,32 +10,39 @@ class AssetsExtension extends \Symfony\Bridge\Twig\Extension\AssetExtension
     /**
      * @var RequestStack
      */
-	private $requestStack;
+    private $requestStack;
 
-	/**
+    /**
      * @var Packages
      */
-	private $packages;
+    private $packages;
 
-	public function __construct(Packages $packages, RequestStack $requestStack)
+    public function __construct(Packages $packages, RequestStack $requestStack)
     {
         $this->packages = $packages;
         $this->requestStack = $requestStack;
     }
 
-	/*
-	 * {@inheritdoc}
-	 */
-	public function getAssetUrl($path, $mutilsite = true, $packageName = null)
+    /*
+     * {@inheritdoc}
+    */
+    public function getAssetUrl($path, $mutilsite = true, $packageName = null)
     {
-    	if($mutilsite) {
-    		$request = $this->requestStack->getCurrentRequest();
-    		$site = $request->attributes->get('site');
-    		if($site != 'app')
-    			return $this->packages->getUrl('/public/'.$site.$path, $packageName);	
-    	}
-    	
-    	return $this->packages->getUrl($path, $packageName);	        
+        if ($mutilsite) {
+            $request = $this
+                ->requestStack
+                ->getCurrentRequest();
+            $site = $request
+                ->attributes
+                ->get('site');
+            if ($site != 'app') return $this
+                ->packages
+                ->getUrl('/public/' . $site . $path, $packageName);
+        }
+
+        return $this
+            ->packages
+            ->getUrl($path, $packageName);
     }
 
     /**

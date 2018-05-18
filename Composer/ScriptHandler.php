@@ -32,8 +32,7 @@ class ScriptHandler
 
 		$rootDir = getcwd();
 
-		if( !isset( $options['symfony-app-dir'] ) || !is_dir( $options['symfony-app-dir'] ) )
-		{
+		if( !isset( $options['symfony-app-dir'] ) || !is_dir( $options['symfony-app-dir'] ) ) {
 			$msg = 'An error occurred because the "%1$s" option or the "%2$s" directory isn\'t available';
 			throw new \RuntimeException( sprintf( $msg, 'symfony-app-dir', $options['symfony-app-dir'] ) );
 		}
