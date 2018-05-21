@@ -253,7 +253,7 @@ class SiteManager
      *
      * @param string $host
      */
-    public function deleteRobotsFie($host)
+    public function deleteRobotsFile($host)
     {
         if (!empty($host)) {
             FileLib::remove($this->projectDir . '/web/robots/' . $host . '.txt');

@@ -121,7 +121,7 @@ class SiteDeleteCommand extends ContainerAwareCommand
                     $sm->deleteAppDirectory($name);
                     $sm->deletePublicDirectory($name);
                     foreach ($sites[$name] as $instance) {
-                        $sm->deleteRobotsFie($instance['host']);
+                        $sm->deleteRobotsFile($instance['host']);
                     }
 
                     // Remove config in sites.yml
@@ -133,7 +133,7 @@ class SiteDeleteCommand extends ContainerAwareCommand
                             // Remove config in sites.yml
                             unset($sites[$name][$key]);
                             // Remove robots.txt
-                            $sm->deleteRobotsFie($host);
+                            $sm->deleteRobotsFile($host);
 
                             // if all locales have been deleted, remove extra config in composer.json and directory
                             if(count($sites[$name]) == 0) {
