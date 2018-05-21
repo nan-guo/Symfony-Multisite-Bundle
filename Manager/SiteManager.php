@@ -173,7 +173,7 @@ class SiteManager
                 }
             }
 
-            $extra['incenteev-parameters'] = $incenteevParameters;
+            $extra['incenteev-parameters'] = array_values($incenteevParameters);
 
             $composer->extra = $extra;
 
