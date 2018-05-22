@@ -3,7 +3,7 @@
     "type": "symfony-bundle",
     "description": "This bundle allows you to manage multisite in symfony application.",
     "keywords": ["symfony multisite", "symfony multi-sites","multisite bundle", "multi-sites bundle"],
-    "homepage": "https://github.com/nan-guo/Multisite-Bundle",
+    "homepage": "https://github.com/nan-guo/Symfony-Multisite-Bundle.git",
     "license": "MIT",
     "authors": [
         {
