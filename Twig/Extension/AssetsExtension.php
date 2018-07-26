@@ -29,6 +29,10 @@ class AssetsExtension extends \Symfony\Bridge\Twig\Extension\AssetExtension
     public function getAssetUrl($path, $mutilsite = true, $packageName = null)
     {
         if ($mutilsite) {
+
+            if(substr($path, 0, 1) != DIRECTORY_SEPARATOR)
+                $path = DIRECTORY_SEPARATOR. $path;
+
             $request = $this
                 ->requestStack
                 ->getCurrentRequest();
