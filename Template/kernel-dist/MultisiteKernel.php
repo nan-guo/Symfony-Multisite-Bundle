@@ -35,16 +35,13 @@ class MultisiteKernel extends AppKernel
     }
 
     /**
-     * Returns the kernel parameters.
+     * The extension point similar to the Bundle::build() method.
      *
-     * @return array An array of kernel parameters
+     * Use this method to register compiler passes and manipulate the container during the building process.
      */
-    protected function getKernelParameters()
+    protected function build(ContainerBuilder $container)
     {
         global $currentSite;
-        
-        $params = parent::getKernelParameters();
-
-        return array_merge($params, ['kernel.instance' => $currentSite]);
+        $container->getParameterBag()->add(['kernel.instance' => $currentSite]);
     }
 }
