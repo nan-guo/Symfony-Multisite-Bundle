@@ -33,4 +33,18 @@ class MultisiteKernel extends AppKernel
         global $instance;
         return dirname(__DIR__).'/var/cache/'.$this->getEnvironment().'/'.$instance;
     }
+
+    /**
+     * Returns the kernel parameters.
+     *
+     * @return array An array of kernel parameters
+     */
+    protected function getKernelParameters()
+    {
+        global $currentSite;
+        
+        $params = parent::getKernelParameters();
+
+        return array_merge($params, ['kernel.instance' => $currentSite]);
+    }
 }

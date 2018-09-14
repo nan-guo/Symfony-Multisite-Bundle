@@ -80,10 +80,10 @@ class SiteCreateCommand extends ContainerAwareCommand
 
         if(!$created) {
             // Config parameters.yml
-            // $question = new ConfirmationQuestion('Do you want to configure a new database ? (yes/no) ', false);
-            // if($helper->ask($input, $output, $question)) {
-            $sm->updateParameters($name);
-            // }
+            $question = new ConfirmationQuestion('Do you want to update the configuration in parameters.yml ? (yes/no) ', false);
+            if($helper->ask($input, $output, $question)) {
+                $sm->updateParameters($name);
+            }
         } else {
             $output->writeln('<fg=green>The site '.$name.' already exists, you can not update database configs.</>');
         }
