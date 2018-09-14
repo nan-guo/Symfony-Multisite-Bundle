@@ -3,6 +3,7 @@
 require_once __DIR__.'/AppKernel.php';
 
 use Symfony\Component\Config\Loader\LoaderInterface;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 class MultisiteKernel extends AppKernel
 {
