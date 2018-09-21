@@ -189,6 +189,14 @@ php bin/console site:delete --name=demo_1
 ```
 ![screenshot](https://github.com/nan-guo/Symfony-Multisite-Bundle/blob/master/Resources/public/imgs/screenshot-5.png)
 
+#### Synchronizer configuration
+
+```
+
+php bin/console site:config:sync
+
+```
+
 ## Attributes
 
 ```

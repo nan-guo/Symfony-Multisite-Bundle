@@ -56,7 +56,7 @@ class SiteSyncConfigCommand extends ContainerAwareCommand
             return;
         }
 
-        $question = new Question('Please enter target directory name(a-zA-Z0-9_):', 'all');
+        $question = new Question('Please enter target directory name(all):', 'all');
         $question->setValidator(['Prodigious\MultisiteBundle\Command\Validators', 'validateSiteFolder']);
         $question->setMaxAttempts(self::MAX_ATTEMPTS);
 
