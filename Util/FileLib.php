@@ -84,4 +84,12 @@ class FileLib
     {
         self::fileSystem()->remove($files);
     }
+
+    /**
+     * Mirrors a directory to another.
+     */
+    public static function mirror($originDir, $targetDir, \Traversable $iterator = null, $options = array())
+    {
+        self::fileSystem()->mirror($originDir, $targetDir, $iterator, $options);
+    }
 }

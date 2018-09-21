@@ -259,4 +259,25 @@ class SiteManager
             FileLib::remove($this->projectDir . '/web/robots/' . $host . '.txt');
         }
     }
+
+    /**
+     * Sync config to app
+     *
+     * @param string $originDir
+     */
+    public function syncToGlobalConfig($originDir)
+    {
+        FileLib::mirror($this->projectDir . DIRECTORY_SEPARATOR . $originDir, $this->projectDir . DIRECTORY_SEPARATOR . 'app');
+    }
+
+    /**
+     * Sync config to app
+     *
+     * @param string $originDir
+     * @param string $targetDir
+     */
+    public function syncConfig($originDir, $targetDir)
+    {
+        FileLib::mirror($this->projectDir . DIRECTORY_SEPARATOR . $originDir, $this->projectDir . DIRECTORY_SEPARATOR . $targetDir);
+    }
 }

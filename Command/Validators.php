@@ -18,7 +18,7 @@ class Validators
     public static function validateSiteName($name)
     {
        
-        if (!preg_match('/^[a-zA-Z0-9_]*$/', $name)) {
+        if (empty($name) || !preg_match('/^[a-zA-Z0-9_]*$/', $name)) {
             throw new \InvalidArgumentException('The site name contains invalid characters.');
         }
 
@@ -49,6 +49,26 @@ class Validators
         }
 
         return $host;
+    }
+
+    /**
+     * Validates that the given site folder is a valid format.
+     *
+     *
+     * @param $name
+     *
+     * @return string
+     */
+    public static function validateSiteFolder($name)
+    {
+       
+        if (empty($name) || !preg_match('/^[a-zA-Z0-9_]*$/', $name)) {
+            throw new \InvalidArgumentException('The site name contains invalid characters.');
+        }
+
+        $name = strtolower($name);
+
+        return $name;
     }
 
     public static function getReservedWords()
