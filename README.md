@@ -119,8 +119,10 @@ To
 ```
     // app.php
     $kernel = new MultisiteKernel('prod', false);
+    $kernel->setSite($site);
     // app_dev.php
     $kernel = new MultisiteKernel('dev', true);
+    $kernel->setSite($site);
 ```
 
 Like this :
@@ -134,6 +136,7 @@ if (PHP_VERSION_ID < 70000) {
 }
 
 $kernel = new MultisiteKernel('prod', false);
+$kernel->setSite($site);
 if (PHP_VERSION_ID < 70000) {
     $kernel->loadClassCache();
 }
