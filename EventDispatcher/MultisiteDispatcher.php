@@ -46,11 +46,9 @@ class MultisiteDispatcher
 			}
 		}
 
-		$this->setGlobalVariables();
-
 		$this->autoload();
 
-		return $this->instance;
+		return ['instance' => $this->instance, 'current_site' => $this->currentSite, 'current_locale' => $this->currentLocale ];
 	}
 
 	public function console($site)
@@ -59,18 +57,9 @@ class MultisiteDispatcher
 			$this->instance = 'app_'.$site;
 		}
 
-		$this->setGlobalVariables();
-
 		$this->autoload();
 
 		return $this->instance;
-	}
-
-	public function setGlobalVariables()
-	{
-		$GLOBALS['instance'] = $this->instance;
-		$GLOBALS['currentLocale'] = $this->currentLocale;
-		$GLOBALS['currentSite'] = $this->currentSite;
 	}
 
 	public function autoload()

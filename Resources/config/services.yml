@@ -10,11 +10,6 @@ services:
         tags:
             - { name: kernel.event_listener, event: console.command, method: onConsoleCommand }
 
-    multisite.response_event_listener:
-        class: Prodigious\MultisiteBundle\EventListener\RequestListener
-        tags:
-            - { name: kernel.event_listener, event: kernel.request, method: onKernelResquest }
-
     multisite.twig_extension:
         class: Prodigious\MultisiteBundle\Twig\Extension\AssetsExtension
         tags:

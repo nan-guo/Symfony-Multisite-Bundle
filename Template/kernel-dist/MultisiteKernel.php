@@ -3,10 +3,14 @@
 require_once __DIR__.'/AppKernel.php';
 
 use Symfony\Component\Config\Loader\LoaderInterface;
+use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\HttpFoundation\Request;
 
 class MultisiteKernel extends AppKernel
 {
+    private $site;
+
     public function registerBundles()
     {
         $bundles = parent::registerBundles();
@@ -25,14 +29,12 @@ class MultisiteKernel extends AppKernel
 
     public function getLogDir()
     {
-        global $instance;
-        return dirname(__DIR__).'/var/logs/logs_'.$instance;
+        return dirname(__DIR__).'/var/logs/logs_'.$this->site['instance'];
     }
 
     public function getCacheDir()
     {
-        global $instance;
-        return dirname(__DIR__).'/var/cache/'.$this->getEnvironment().'/'.$instance;
+        return dirname(__DIR__).'/var/cache/'.$this->getEnvironment().'/'.$this->site['instance'];
     }
 
     /**
@@ -42,7 +44,35 @@ class MultisiteKernel extends AppKernel
      */
     protected function build(ContainerBuilder $container)
     {
-        global $currentSite;
-        $container->getParameterBag()->add(['kernel.instance' => $currentSite]);
+        $container->getParameterBag()->add(['kernel.instance' => $this->site['current_site']]);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true)
+    {
+        $request->attributes->set('instance', $this->site['instance']);
+        $request->attributes->set('site', $this->site['current_site']);
+        if(!empty($site['current_locale'])) {
+            $request->setLocale($this->site['current_locale']);
+        }
+        return parent::handle($request, $type, $catch);
+    }
+
+    /**
+     * @param array $site
+     */
+    public function setSite($site)
+    {
+        $this->site = $site;
+    }
+
+    /**
+     * @return array
+     */
+    public function getSite()
+    {
+        return $this->site;
     }
 }
