@@ -40,10 +40,8 @@ class ScriptHandler
 		if(!@file_exists($rootDir.'/sites')) {
 			FileLib::sync(__DIR__.'/../Template/sites-dist', $rootDir.'/sites');
 		}
-
-		if(!@file_exists($options['symfony-app-dir'].'/MultisiteKernel.php')) {
-			FileLib::sync(__DIR__.'/../Template/kernel-dist', $options['symfony-app-dir']);
-		}
+		
+		FileLib::sync(__DIR__.'/../Template/kernel-dist', $options['symfony-app-dir']);
 	}
 
 	/**
