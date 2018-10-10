@@ -39,7 +39,7 @@ class AssetsExtension extends \Symfony\Bridge\Twig\Extension\AssetExtension
             $site = $request
                 ->attributes
                 ->get('site');
-            if ($site != 'app') return $this
+            if ($site != 'app' && !empty($site)) return $this
                 ->packages
                 ->getUrl('/public/' . $site . $path, $packageName);
         }
